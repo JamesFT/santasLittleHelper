@@ -1,4 +1,4 @@
 santasLittleHelper
 ==================
 
-Santa's Little Helper - Collect of little helper 
+Santa's Little Helper - Collection of little helper 
