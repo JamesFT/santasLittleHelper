@@ -1,0 +1,50 @@
+<html>
+<head>
+<script src="./santasLittleHelper.js"></script>
+</head>
+
+<body>
+
+<script >
+	var s="Santa's Little Helper";
+	document.write("String: " + s);
+	document.write("<br />tolowerCamelCase: " + s.tolowerCamelCase());
+	document.write("<br />toCamelCase: " + s.toCamelCase());
+	document.write("<br />toSnakeCase: " + s.toSnakeCase());
+	document.write("<br /><br />");
+	
+	var mycars = new Array();
+	mycars[0] = {name: "Saab", year: 2010 , "cost" : 50000.00};
+	mycars[1] = {name: "Volvo", year: 2003};
+	mycars[2] = {name: "BMW", year: 1997,"cost" : 75000.00};
+	document.write("<br />List JSON<br />");
+		document.write("<pre>" + JSON.stringify(mycars,null,"\t") + "</pre>");	
+	document.write("<br />Start List");
+	for (var i = 0; i < mycars.length; i++) {
+	    var car = mycars[i];
+		document.write("<br />Car " + i+ " : " + car.year + " " + car.name);
+	}
+	mycars.sortByObjectProperty("name");
+    document.write('<br /><br />Sorted List by "name" : mycars.sortByObjectProperty("name")');
+	for (var i = 0; i < mycars.length; i++) {
+	    var car = mycars[i];
+		document.write("<br />Car " + i+ " : " + car.year + " " + car.name);
+	}
+	mycars.sortByObjectProperty("year");
+    document.write('<br /><br />Sorted List by "year" : mycars.sortByObjectProperty("year")');
+	for (var i = 0; i < mycars.length; i++) {
+	    var car = mycars[i];
+		document.write("<br />Car " + i+ " : " + car.year + " " + car.name);
+	}
+		mycars.sortByObjectProperty("cost");
+    document.write('<br /><br />Sorted List by "cost" : mycars.sortByObjectProperty("cost")');
+	for (var i = 0; i < mycars.length; i++) {
+	    var car = mycars[i];
+		document.write("<br />Car " + i+ " : " + car.year + " " + car.name + "(Cost : " + car.cost + ")");
+	}
+</script>
+
+
+</body>
+
+</html>
