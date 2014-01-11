@@ -179,8 +179,8 @@ String::toSnakeCase = ->
 
 Array::sortByObjectProperty = (PropertyName) ->
   @sort (a, b) ->
-    nameA = eval_("a." + PropertyName)
-    nameB = eval_("b." + PropertyName)
+    nameA = eval("a." + PropertyName)
+    nameB = eval("b." + PropertyName)
     return -1  if nameA isnt `undefined` and nameB is `undefined`
     return 1  if nameA is `undefined` and nameB isnt `undefined`
     return 0  if nameA is `undefined` and nameB is `undefined`
