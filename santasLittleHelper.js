@@ -249,8 +249,8 @@ String.prototype.toSnakeCase = function() {
 Array.prototype.sortByObjectProperty = function(PropertyName) {
   return this.sort(function(a, b) {
     var nameA, nameB;
-    nameA = eval_("a." + PropertyName);
-    nameB = eval_("b." + PropertyName);
+    nameA = eval("a." + PropertyName);
+    nameB = eval("b." + PropertyName);
     if (nameA !== undefined && nameB === undefined) {
       return -1;
     }
