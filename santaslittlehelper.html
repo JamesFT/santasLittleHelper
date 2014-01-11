@@ -1,6 +1,7 @@
 <html>
 <head>
     <script src="santasLittleHelper.js"></script>
+	 <script src="santasLittleHelper_audio_addon.js"></script>
 </head>
 
 <body>
@@ -11,7 +12,13 @@
     <script>
 	
 		document.write("<h2>Audio Helpers</h2>");
-        var sounds = ["silent", "click", "beep","blop", "buzz", "clang", "holePunch", "pinDrop","slap","swipe","tone"];
+		
+		document.write('santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.beep();">beep()</a><br />');
+		document.write('santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.click();">click()</a><br />');
+		
+		
+		document.write('<br><b>if using &lt;script src=&quot;santasLittleHelper_audio_addon.js&quot;&gt;&lt;/script&gt;</b><br />');
+        var sounds = ["silent", "blop", "buzz", "clang", "holePunch", "pinDrop","slap","swipe","tone"];
 
         for (var i = 0; i < sounds.length ; i++) {
             document.write('santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.'+ sounds[i] +'();">' + sounds[i] + "()</a><br />");
