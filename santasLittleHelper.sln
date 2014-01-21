@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6E1E421-325F-436B-96F3-7B842333026C}"
+	ProjectSection(SolutionItems) = preProject
+		santasLittleHelper.coffee = santasLittleHelper.coffee
+		santaslittlehelper.html = santaslittlehelper.html
+		santasLittleHelper.js = santasLittleHelper.js
+		santasLittleHelper.min.js = santasLittleHelper.min.js
+		santasLittleHelper_audio_addon.coffee = santasLittleHelper_audio_addon.coffee
+		santasLittleHelper_audio_addon.js = santasLittleHelper_audio_addon.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
