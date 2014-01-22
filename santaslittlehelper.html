@@ -6,50 +6,56 @@
 	</head>
 
 <body>
-	<h1>Santa's Little Helper </h1>
+	<h1>Santa's Little Helper&nbsp;
+	   <script>
+			  document.write(santasLittleHelper.version());
+	</script>
+	</h1>
 	Santa's Little Helper test page.
 	<br />
 	<br />
-	&lt;script src=&quot;santasLittleHelper.js&quot;&gt;&lt;/script&gt;<br />
+	&lt;script src=&quot;santasLittleHelper.js&quot;&gt;&lt;/script&gt;
+	
+	<br />
 	<hr>
 
 	<h2>General Helpers</h2>
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.makeId());">makeId()</a><br />
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.makeId('myField'));">makeId('myField')</a><br /><br />
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.makeId());">makeId()</a><br />
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.makeId('myField'));">makeId('myField')</a><br /><br />
 		
-	    santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isFunction(function () {}));">isFunction(function () {})</a></br>
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isFunction(100));">isFunction(100)</a></br><br />
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isFunction(function () {}));">isFunction(function () {})</a></br>
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isFunction(100));">isFunction(100)</a></br><br />
 		
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isNumber(function () {}));">isNumber(function () {})</a></br>
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isNumber(100));">isNumber(100)</a></br><br />
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isNumber(function () {}));">isNumber(function () {})</a></br>
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isNumber(100));">isNumber(100)</a></br><br />
 		
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isBoolean(true));">isBoolean(true)</a></br>
-		santasLittleHelper.<a href="#" onclick="alert(santasLittleHelper.isBoolean(1));">isBoolean(1)</a></br><br />
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isBoolean(true));">isBoolean(true)</a></br>
+		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isBoolean(1));">isBoolean(1)</a></br><br />
 	<br /><br /><hr>
 	<h2>Audio Helpers</h2>
 
-	santasLittleHelper.audio.<a href="#" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(true));">mute(true)</a><br />
-	santasLittleHelper.audio.<a href="#" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(false));">mute(false)</a><br />
-	santasLittleHelper.audio.<a href="#" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute());">mute()</a><br /><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(true));">mute(true)</a><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(false));">mute(false)</a><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute());">mute()</a><br /><br />
 	
-	santasLittleHelper.audio.<a href="#" onclick="alert('Volume is : ' + santasLittleHelper.audio.volume()");>volume()</a><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Volume is : ' + santasLittleHelper.audio.volume());">volume()</a><br />
 	
 	<script>
 		for (var i = 0; i <= 100 ; i+=10) {
-			document.write('santasLittleHelper.audio.<a href="#" onclick="' + "alert('Volume is :' + "+'santasLittleHelper.audio.volume(' + i + '));">volume(' + i + ')</a><br />');
+			document.write('santasLittleHelper.audio.<a href="javascript: void(0);" onclick="' + "alert('Volume is :' + "+'santasLittleHelper.audio.volume(' + i + '));">volume(' + i + ')</a><br />');
 		}
 	</script>
 	
 	<br />
-	santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.beep();">beep()</a><br />
-	santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.click();">click()</a><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.beep();">beep()</a><br />
+	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.click();">click()</a><br />
 
 	<script>
 		document.write('<br><b>if using &lt;script src=&quot;santasLittleHelper_audio_addon.js&quot;&gt;&lt;/script&gt;</b><br />');
 		var sounds = ["silent", "blop", "buzz", "clang", "holePunch", "pinDrop", "slap", "swipe", "tone"];
 
 		for (var i = 0; i < sounds.length ; i++) {
-			document.write('santasLittleHelper.audio.<a href="#" onclick="santasLittleHelper.audio.' + sounds[i] + '();">' + sounds[i] + "()</a><br />");
+			document.write('santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.' + sounds[i] + '();">' + sounds[i] + "()</a><br />");
 		}
 
 
