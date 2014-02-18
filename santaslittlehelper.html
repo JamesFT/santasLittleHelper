@@ -1,110 +1,423 @@
 <html>
-	<head>
-		<title>Santa's Little Helpers - Documentation </title>
-		<script src="/js/santasLittleHelper.js"></script>
-		<script src="/js/santasLittleHelper_audio_addon.js"></script>
-	</head>
+
+<head>
+    <title>Santa's Little Helpers - Documentation</title>
+    <link rel="icon" href="/images/santasLittleHelper.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/santasLittleHelper.ico" type="image/x-icon">
+
+
+    <script src="http://cdn.cedartownonline.com/santasLittleHelper/santasLittleHelper.js"></script>
+    <script src="http://cdn.cedartownonline.com/santasLittleHelper/santasLittleHelper_audio_addon.js"></script>
+
+    <style>
+        .santasLittleHelperPageWait {
+            opacity: 0.8;
+        }
+
+        .callbackHeader {
+            width: 100%;
+            height: 30px;
+            background-color: red;
+            color: yellowgreen;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+            padding: 1px;
+        }
+
+        .callbackBox {
+            width: 100%;
+            height: 65px;
+            border: 3px solid red;
+            background-color: green;
+            color: white;
+            margin: 10px 0 0 0;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        #googleMap {
+            width: 400px;
+            height: 400px;
+        }
+
+        .container {
+            border: 3px solid green;
+            width: 100%;
+            display: table;
+            vertical-align: text-top;
+        }
+
+        .row {
+            display: table-row;
+            vertical-align: text-top;
+        }
+
+        .column {
+            display: table-cell;
+            border: 2px solid darkred;
+            vertical-align: text-top;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        table {
+            width: 500px;
+            border: 1px solid red;
+            background-color: green;
+            color: white;
+            margin: 0;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        th {
+            height: 30px;
+            background-color: red;
+            color: yellowgreen;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        td {
+            border: 1px solid red;
+            height: 20px;
+            text-align: center;
+        }
+
+        .santasLittleHelperHeaderIsFrozen {
+            border: 10px solid red !important;
+        }
+
+        #title {
+            color: yellowgreen;
+            position: absolute;
+            top: 115px;
+            left: 115px;
+        }
+    </style>
+</head>
 
 <body>
-	<h1>Santa's Little Helper&nbsp;
-	   <script>
-			  document.write(santasLittleHelper.version());
-	</script>
-	</h1>
-	Santa's Little Helper test page.
-	<br />
-	<br />
-	&lt;script src=&quot;santasLittleHelper.js&quot;&gt;&lt;/script&gt;
-	
-	<br />
-	<hr>
-
-	<h2>General Helpers</h2>
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.makeId());">makeId()</a><br />
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.makeId('myField'));">makeId('myField')</a><br /><br />
-		
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isFunction(function () {}));">isFunction(function () {})</a></br>
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isFunction(100));">isFunction(100)</a></br><br />
-		
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isNumber(function () {}));">isNumber(function () {})</a></br>
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isNumber(100));">isNumber(100)</a></br><br />
-		
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isBoolean(true));">isBoolean(true)</a></br>
-		santasLittleHelper.<a href="javascript: void(0);" onclick="alert(santasLittleHelper.isBoolean(1));">isBoolean(1)</a></br><br />
-	<br /><br /><hr>
-	<h2>Audio Helpers</h2>
-
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(true));">mute(true)</a><br />
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute(false));">mute(false)</a><br />
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Mute is : ' +santasLittleHelper.audio.mute());">mute()</a><br /><br />
-	
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="alert('Volume is : ' + santasLittleHelper.audio.volume());">volume()</a><br />
-	
-	<script>
-		for (var i = 0; i <= 100 ; i+=10) {
-			document.write('santasLittleHelper.audio.<a href="javascript: void(0);" onclick="' + "alert('Volume is :' + "+'santasLittleHelper.audio.volume(' + i + '));">volume(' + i + ')</a><br />');
-		}
-	</script>
-	
-	<br />
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.beep();">beep()</a><br />
-	santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.click();">click()</a><br />
-
-	<script>
-		document.write('<br><b>if using &lt;script src=&quot;santasLittleHelper_audio_addon.js&quot;&gt;&lt;/script&gt;</b><br />');
-		var sounds = ["silent", "blop", "buzz", "clang", "holePunch", "pinDrop", "slap", "swipe", "tone"];
-
-		for (var i = 0; i < sounds.length ; i++) {
-			document.write('santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.' + sounds[i] + '();">' + sounds[i] + "()</a><br />");
-		}
 
 
+    <h1>
+        <img src="/images/santasLittleHelper.png" />
+        <script>
+            document.write("<div id=\"title\">Santa's Little Helper&nbsp;" + santasLittleHelper.version() + "</div>");
 
-		document.write("<br /><hr>");
-		document.write("<h2>STRING Extension</h2>");
-		var str = "Santa's Little Helper";
-		document.write("var str = \"" + str + "\";");
-		document.write("<br />str.tolowerCamelCase: " + str.tolowerCamelCase());
-		document.write("<br />str.toCamelCase: " + str.toCamelCase());
-		document.write("<br />str.toSnakeCase: " + str.toSnakeCase());
+            santasLittleHelper.loadScript(santasLittleHelper.config.googleMapAPIScriptId, santasLittleHelper.config.googleMapAPIUrl);
 
-		document.write("<br /><br /><hr>");
-		document.write("<h2>ARRAY Extension</h2>");
-		var mycars = new Array();
-		mycars[0] = { name: "Saab", year: 2010, "cost": 50000.00 };
-		mycars[1] = { name: "Volvo", year: 2003 };
-		mycars[2] = { name: "BMW", year: 1997, "cost": 75000.00 };
-		document.write("<br />JSON.stringify(mycars);<br />");
-		document.write("<pre>" + JSON.stringify(mycars, null, "\t") + "</pre>");
-		document.write("<br />Start List");
-		for (var i = 0; i < mycars.length; i++) {
-			var car = mycars[i];
-			document.write("<br />Car " + i + " : " + car.year + " " + car.name);
-		}
-		mycars.sortByObjectProperty("name");
-		document.write('<br /><br />Sorted List by "name" : mycars.sortByObjectProperty("name")');
-		for (var i = 0; i < mycars.length; i++) {
-			var car = mycars[i];
-			document.write("<br />Car " + i + " : " + car.year + " " + car.name);
-		}
-		mycars.sortByObjectProperty("year");
-		document.write('<br /><br />Sorted List by "year" : mycars.sortByObjectProperty("year")');
-		for (var i = 0; i < mycars.length; i++) {
-			var car = mycars[i];
-			document.write("<br />Car " + i + " : " + car.year + " " + car.name);
-		}
-		mycars.sortByObjectProperty("cost");
-		document.write('<br /><br />Sorted List by "cost" : mycars.sortByObjectProperty("cost")');
-		for (var i = 0; i < mycars.length; i++) {
-			var car = mycars[i];
-			document.write("<br />Car " + i + " : " + car.year + " " + car.name + "(Cost : " + car.cost + ")");
-		}
+            santasLittleHelper.page.callBack = function (type, pageElement) {
+                var x = document.getElementById("pageMessage");
+                x.innerHTML = "&nbsp;" + type + ": " + pageElement.nodeName + "/ " + pageElement.id;
+            };
+            santasLittleHelper.audio.callBack = function (type, action, value) {
+                var x = document.getElementById("audioMessage");
+                x.innerHTML = "&nbsp;" + type + ": " + action + " = " + value;
+            };
+
+            function messageAlert(messageBox, messageText) {
+                var x = document.getElementById(messageBox);
+                x.innerHTML = "&nbsp;" + messageText;
+            }
+            santasLittleHelper.location.callBack = function(position) {
+                messageAlert("generalMessage", position.latitude + " x " +position.longitude);
+                santasLittleHelper.location.googleMapDiv("googleMap");
+            }
+
+        </script>
+    </h1>
+    Santa's Little Helper test page.<br />
+    &lt;script src=&quot;santasLittleHelper.js&quot;&gt;&lt;/script&gt;
+        <br />
+    <div class="callbackBox">
+        <h2 class="callbackHeader">General Helpers</h2>
+        <div id="generalMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <ul>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.makeId());">makeId()</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.makeId('myField'));">makeId('myField')</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isFunction(function () {}));">isFunction(function () {})</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isFunction(100));">isFunction(100)</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isNumber(function () {}));">isNumber(function () {})</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isNumber(100));">isNumber(100)</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isBoolean(true));">isBoolean(true)</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isBoolean(1));">isBoolean(1)</a></li>
+                    
+                    
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(8));">generatePassword(8)</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(15));">generatePassword(15)</a></li>
+                    <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(8,true));">generatePassword(8,true)</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <div id="googleMap">Place Holder</div>
+                <input type="button" onclick="santasLittleHelper.location.get();" value="Click to load location" />
+            </div>
+        </div>
+    </div>
+
+    <div class="callbackBox">
+        <h2 class="callbackHeader">Page Helper</h2>
+        <div id="pageMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <input type="button" onclick="santasLittleHelper.page.wait(5000);" value="Page Wait 5 Sec." />
+                <hr />
+                css:
+                <pre>
+.santasLittleHelperPageWait {
+    opacity: 0.8;
+}
+</pre>
+            </div>
+            <div class="column">
+                <table id="testTable">
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                            <th>Header 4</th>
+                            <th>Header 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <script>
+                            for (var r = 1; r <= 10; r += 1) {
+                                document.write('<tr>');
+                                for (var c = 1; c <= 5; c += 1) {
+                                    document.write('<td>R:' + r + ' C:' + c + '</td>');
+                                }
+                                document.write('</tr>');
+                            }
+                        </script>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <div></div>
+                <input type="button" onclick="santasLittleHelper.page.TableFreeze('testTable', 200, 515);" value="Freeze Header" />
+                <input type="button" onclick="santasLittleHelper.page.TableThaw('testTable');" value="Thaw Header" />
+                <hr />
+                html:
+                <br />
+                &lt;input type=&quot;button&quot;
+                <br />
+                onclick=&quot;santasLittleHelper.page.TableFreeze('testTable',200,715);&quot;<br />
+                value=&quot;Freeze Header&quot;/&gt;
+                <br />
+                <br />
+                &lt;input type=&quot;button&quot; onclick=&quot;santasLittleHelper.page.TableThaw('testTable');&quot;<br />
+                value=&quot;Thaw Header&quot; /&gt;
+                <hr />
+                css:
+                <pre>
+.santasLittleHelperHeaderIsFrozen {
+    border: 10px solid red !important;
+}
+</pre>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="callbackBox">
+        <h2 class="callbackHeader">Audio Helpers</h2>
+        <div id="audioMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <ul>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.mute(true);">mute(true)</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.mute(false);">mute(false)</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.mute();">mute()</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volume();">volume()</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volumeUp();">volumeUp()</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volumeUp(5);">volumeUp(5)</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volumeDown();">volumeDown()</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volumeDown(5);">volumeDown(5)</a>
+                    </li>
+                    <script>
+                        for (var i = 0; i <= 100; i += 10) {
+                            document.write('<li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.volume(' + i + ');">volume(' + i + ')</a></li>');
+                        }
+                    </script>
+                </ul>
+                <ul>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.beep();">beep()</a>
+                    </li>
+                    <li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.click();">click()</a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="column">
+
+                <br>
+                <b>if using &lt;script src=&quot;santasLittleHelper_audio_addon.js&quot;&gt;&lt;/script&gt;</b>
+                <br />
+                <ul>
+                    <script>
+                        var sounds = ["silent", "blop", "buzz", "clang", "holePunch", "pinDrop", "slap", "swipe", "tone"];
+
+                        for (var i = 0; i < sounds.length; i++) {
+                            document.write('<li>santasLittleHelper.audio.<a href="javascript: void(0);" onclick="santasLittleHelper.audio.' + sounds[i] + '();">' + sounds[i] + "()</a></li>");
+                        }
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="callbackBox">
+        <h2 class="callbackHeader">Validation Helper</h2>
+        <div id="validateMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <ul>
+                    <script>
+                        var phones = ["1231234567", "5554443333", "555444-333", "555 444 3333", "555-444-3333", "(555) 444-3333"];
+                        for (var i = 0; i < phones.length; i++) {
+                            document.write('<li>santasLittleHelper.validate.phone("' + phones[i] + '") = ' + santasLittleHelper.validate.phone(phones[i]) + '</li>');
+                        }
+                    </script>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <script>
+                        document.write("Number of Postal Code Patterns : " + santasLittleHelper.validate.postalCodePatterns.length);
+                        var postalCodes = ["T0G2A4", "T0B2H0", 30188, "301881234", "30188-1234", "T0G1L0", "123456", "T0C", "12A3$"];
+                        var dval;
+                        for (var i = 0; i < postalCodes.length; i++) {
+                            if (SLH.isNumber(postalCodes[i])) {
+                                dval = postalCodes[i];
+                            } else {
+                                dval = '"' + postalCodes[i] + '"';
+                            }
+                            document.write('<li>santasLittleHelper.validate.postalCode(' + dval + ') = '
+                                + santasLittleHelper.validate.postalCode(postalCodes[i])
+                                + " ...postalCodeType = " + santasLittleHelper.validate.postalCodeType(postalCodes[i])
+                                + '</li>');
+                        }
+                    </script>
+                </ul>
+            </div>
+        </div>
+                <div class="row">
+            <div class="column">
+                <ul>
+                    <script>
+                        var testCC = ["378282246310005","378734493671000","4111111111111111","4012888888881881","5555555555554444","5105105105105100","6011111111111117","6011000990139424","1111111111111","ABCDEFGHIJKLM"];
+                        for (var i = 0; i < testCC.length; i++) {
+                            document.write('<li>santasLittleHelper.validate.creditCardType("' + testCC[i] + '") = ' + santasLittleHelper.validate.creditCardType(testCC[i]) + '</li>');
+                        }
+                    </script>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <script>
+        
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="callbackBox">
+        <h2 class="callbackHeader">STRING Extension</h2>
+        <div id="stringMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <script>
+                    var str = "Santa's Little Helper";
+                    document.write("var str = \"" + str + "\";");
+                    document.write("<ul><li>str.tolowerCamelCase: " + str.tolowerCamelCase() + "</li>");
+                    document.write("<li>str.toCamelCase: " + str.toCamelCase() + "</li>");
+                    document.write("<li>str.toSnakeCase: " + str.toSnakeCase() + "</li></ul>");
+                </script>
+            </div>
+        </div>
+    </div>
 
 
 
-	</script>
 
 
+    <div class="callbackBox">
+        <h2 class="callbackHeader">ARRAY Extension</h2>
+        <div id="arrayMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <script>
+                    var mycars = new Array();
+                    mycars[0] = { name: "Saab", year: 2010, "cost": 50000.00 };
+                    mycars[1] = { name: "Volvo", year: 2003 };
+                    mycars[2] = { name: "BMW", year: 1997, "cost": 75000.00 };
+                    document.write("<br />JSON.stringify(mycars);<br />");
+                    document.write("<pre>" + JSON.stringify(mycars, null, "\t") + "</pre>");
+                </script>
+
+            </div>
+            <div class="column">
+                <script>
+                    document.write("<br />Start List");
+                    for (var i = 0; i < mycars.length; i++) {
+                        var car = mycars[i];
+                        document.write("<br />Car " + i + " : " + car.year + " " + car.name);
+                    }
+                    mycars.sortByObjectProperty("name");
+                    document.write('<br /><br />Sorted List by "name" : mycars.sortByObjectProperty("name")');
+                    for (var i = 0; i < mycars.length; i++) {
+                        var car = mycars[i];
+                        document.write("<br />Car " + i + " : " + car.year + " " + car.name);
+                    }
+                    mycars.sortByObjectProperty("year");
+                    document.write('<br /><br />Sorted List by "year" : mycars.sortByObjectProperty("year")');
+                    for (var i = 0; i < mycars.length; i++) {
+                        var car = mycars[i];
+                        document.write("<br />Car " + i + " : " + car.year + " " + car.name);
+                    }
+                    mycars.sortByObjectProperty("cost");
+                    document.write('<br /><br />Sorted List by "cost" : mycars.sortByObjectProperty("cost")');
+                    for (var i = 0; i < mycars.length; i++) {
+                        var car = mycars[i];
+                        document.write("<br />Car " + i + " : " + car.year + " " + car.name + "(Cost : " + car.cost + ")");
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

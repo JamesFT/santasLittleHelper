@@ -1,17 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6E1E421-325F-436B-96F3-7B842333026C}"
-	ProjectSection(SolutionItems) = preProject
-		santasLittleHelper.coffee = santasLittleHelper.coffee
-		santaslittlehelper.html = santaslittlehelper.html
-		santasLittleHelper.js = santasLittleHelper.js
-		santasLittleHelper.min.js = santasLittleHelper.min.js
-		santasLittleHelper_audio_addon.coffee = santasLittleHelper_audio_addon.coffee
-		santasLittleHelper_audio_addon.js = santasLittleHelper_audio_addon.js
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "santasLittleHelper", ".", "{862DB80B-0305-424B-B56F-ABA71B335F78}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/santasLittleHelper"
+		Debug.AspNetCompiler.PhysicalPath = "..\santasLittleHelper\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\santasLittleHelper\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/santasLittleHelper"
+		Release.AspNetCompiler.PhysicalPath = "..\santasLittleHelper\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\santasLittleHelper\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62856"
 	EndProjectSection
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{862DB80B-0305-424B-B56F-ABA71B335F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862DB80B-0305-424B-B56F-ABA71B335F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
