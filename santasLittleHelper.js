@@ -60,6 +60,16 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     return "0.9.5a";
   };
 
+  /*
+   Handy little Variables
+  */
+
+
+  /*
+  Configuration Setup
+  */
+
+
   root.santasLittleHelper.config = root.santasLittleHelper.config || {};
 
   root.santasLittleHelper.config.characterLib = "123456789AaBbCcDdEeFfGgHhIiJj123456789KkLlMmNnOoPpQqRrSsT123456789tUuVvWwXxYyZz123456789";
@@ -67,6 +77,10 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   root.santasLittleHelper.config.googleMapAPIUrl = "https://maps.googleapis.com/maps/api/js?sensor=false";
 
   root.santasLittleHelper.config.googleMapAPIScriptId = "santasLittleHelperGoogleMap";
+
+  root.santasLittleHelper.decimalSeparator = Number("1.2").toLocaleString().substr(1, 1);
+
+  root.santasLittleHelper.currency = "$";
 
   /*
       General Helpers
@@ -682,6 +696,47 @@ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
    Extension to Existing objects
   */
 
+
+  root.Number.prototype.MD = function(decimalPlace) {
+    var AmountWithCommas, arParts, decPart, intPart;
+    AmountWithCommas = this.toLocaleString();
+    arParts = String(AmountWithCommas).split(root.santasLittleHelper.decimalSeparator);
+    intPart = arParts[0];
+    decPart = (arParts.length > 1 ? arParts[arParts.length - 1] : "");
+    decPart = (decPart + "".fill(decimalPlace, "0")).substr(0, decimalPlace);
+    arParts[arParts.length - 1] = decPart;
+    return arParts.join(root.santasLittleHelper.decimalSeparator);
+  };
+
+  root.String.prototype.fill = function(length, character, appendLeft) {
+    var rtn;
+    if (typeof length === 'undefined' || length === null) {
+      length = this.length;
+    }
+    if (typeof character === 'undefined' || character === null) {
+      character = "_";
+    }
+    if (typeof appendLeft !== 'boolean' || typeof appendLeft === 'undefined' || character === null) {
+      appendLeft = false;
+    }
+    rtn = this;
+    while (rtn.length < length) {
+      if (appendLeft) {
+        rtn = character + rtn;
+      } else {
+        rtn = rtn.concat(character);
+      }
+    }
+    return rtn;
+  };
+
+  root.String.prototype.pad = function(length, character) {
+    return this.fill(length, character, true);
+  };
+
+  root.String.prototype.zeroFill = function(length) {
+    return this.fill(length, "0", false);
+  };
 
   root.String.prototype.toCapitalCase = function() {
     var i, re, words;

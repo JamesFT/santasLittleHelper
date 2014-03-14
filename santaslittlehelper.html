@@ -125,8 +125,8 @@
                 var x = document.getElementById(messageBox);
                 x.innerHTML = "&nbsp;" + messageText;
             }
-            santasLittleHelper.location.callBack = function(position) {
-                messageAlert("generalMessage", position.latitude + " x " +position.longitude);
+            santasLittleHelper.location.callBack = function (position) {
+                messageAlert("generalMessage", position.latitude + " x " + position.longitude);
                 santasLittleHelper.location.googleMapDiv("googleMap");
             }
 
@@ -151,8 +151,8 @@
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isNumber(100));">isNumber(100)</a></li>
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isBoolean(true));">isBoolean(true)</a></li>
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.isBoolean(1));">isBoolean(1)</a></li>
-                    
-                    
+
+
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(8));">generatePassword(8)</a></li>
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(15));">generatePassword(15)</a></li>
                     <li>santasLittleHelper.<a href="javascript: void(0);" onclick="messageAlert('generalMessage',santasLittleHelper.generatePassword(8,true));">generatePassword(8,true)</a></li>
@@ -328,11 +328,11 @@
                 </ul>
             </div>
         </div>
-                <div class="row">
+        <div class="row">
             <div class="column">
                 <ul>
                     <script>
-                        var testCC = ["378282246310005","378734493671000","4111111111111111","4012888888881881","5555555555554444","5105105105105100","6011111111111117","6011000990139424","1111111111111","ABCDEFGHIJKLM"];
+                        var testCC = ["378282246310005", "378734493671000", "4111111111111111", "4012888888881881", "5555555555554444", "5105105105105100", "6011111111111117", "6011000990139424", "1111111111111", "ABCDEFGHIJKLM"];
                         for (var i = 0; i < testCC.length; i++) {
                             document.write('<li>santasLittleHelper.validate.creditCardType("' + testCC[i] + '") = ' + santasLittleHelper.validate.creditCardType(testCC[i]) + '</li>');
                         }
@@ -349,6 +349,41 @@
         </div>
     </div>
 
+    <div id="stringExtensionSection" class="callbackBox">
+        <h2 class="callbackHeader">Number Extension</h2>
+        <div id="stringMessage">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <script>
+                    var num = 12345678.45678;
+
+                    document.write("var num = \"" + num + "\";");
+                    document.write("<ul>");
+                    document.write("<li>num.MD(2) : " + num.MD(2) + "</li>");
+                    document.write("<li>num.MD(4) : " + num.MD(4) + "</li>");
+                    document.write("</ul>");
+
+                </script>
+            </div>
+            <div class="column">
+                <script>
+                    var num = 5678.4;
+
+                    document.write("var num = \"" + num + "\";");
+                    document.write("<ul>");
+                    document.write("<li>num.MD(2) : " + num.MD(2) + "</li>");
+                    document.write("<li>num.MD(4) : " + num.MD(4) + "</li>");
+                    document.write("</ul>");
+
+                </script>
+            </div>
+
+
+        </div>
+    </div>
+
 
     <div id="stringExtensionSection" class="callbackBox">
         <h2 class="callbackHeader">STRING Extension</h2>
@@ -360,9 +395,13 @@
                 <script>
                     var str = "Santa's Little Helper";
                     document.write("var str = \"" + str + "\";");
-                    document.write("<ul><li>str.tolowerCamelCase: " + str.tolowerCamelCase() + "</li>");
+                    document.write("<ul>");
+                    document.write("<li>str.tolowerCamelCase: " + str.tolowerCamelCase() + "</li>");
                     document.write("<li>str.toCamelCase: " + str.toCamelCase() + "</li>");
-                    document.write("<li>str.toSnakeCase: " + str.toSnakeCase() + "</li></ul>");
+                    document.write("<li>str.toSnakeCase: " + str.toSnakeCase() + "</li>");
+                    document.write("<li>str.fill(50,\"X\") : " + str.fill(50, "X") + "<-</li>");
+                    document.write("<li>str.fill(50,\"X\",true) : " + str.fill(50, "X", true) + "<-</li>");
+                    document.write("</ul>");
                 </script>
             </div>
         </div>
@@ -372,7 +411,7 @@
 
 
 
-    <div id="arrayExtensionSection"  class="callbackBox">
+    <div id="arrayExtensionSection" class="callbackBox">
         <h2 class="callbackHeader">ARRAY Extension</h2>
         <div id="arrayMessage">&nbsp;</div>
     </div>

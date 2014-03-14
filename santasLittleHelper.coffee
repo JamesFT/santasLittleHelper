@@ -44,11 +44,20 @@ root.SLH = root.santasLittleHelper
 root.santasLittleHelper.version = ->
     "0.9.5a"
 
+###
+ Handy little Variables
+###
 
+###
+Configuration Setup
+###
 root.santasLittleHelper.config = root.santasLittleHelper.config or {}
 root.santasLittleHelper.config.characterLib = "123456789AaBbCcDdEeFfGgHhIiJj123456789KkLlMmNnOoPpQqRrSsT123456789tUuVvWwXxYyZz123456789"
 root.santasLittleHelper.config.googleMapAPIUrl = "https://maps.googleapis.com/maps/api/js?sensor=false"
 root.santasLittleHelper.config.googleMapAPIScriptId = "santasLittleHelperGoogleMap"
+root.santasLittleHelper.decimalSeparator =  Number("1.2").toLocaleString().substr(1, 1)
+root.santasLittleHelper.currency =  "$"
+
 ###
     General Helpers
 ###
@@ -87,7 +96,7 @@ root.santasLittleHelper.isUndefined = (objUndefined) ->
 isUndefined = (objUndefined) ->
     checkType objUndefined, "undefined"
 #		
-                
+               
 checkType = (checkObject,objectType) ->
     try typeof checkObject is objectType catch e then false 
             
@@ -512,6 +521,33 @@ root.santasLittleHelper.validate.creditCardType = (cardNumber,returnName) ->
 ###
  Extension to Existing objects
 ###
+root.Number::MD = (decimalPlace) ->
+  AmountWithCommas = @toLocaleString()
+  arParts = String(AmountWithCommas).split(root.santasLittleHelper.decimalSeparator)
+  intPart = arParts[0]
+  decPart = ((if arParts.length > 1 then arParts[arParts.length-1] else ""))
+  decPart = (decPart + "".fill(decimalPlace,"0")).substr(0, decimalPlace)
+  arParts[arParts.length-1] = decPart
+  return arParts.join root.santasLittleHelper.decimalSeparator
+
+root.String::fill  = (length , character, appendLeft) ->
+    length = @length if typeof length is 'undefined' or length is null
+    character = "_" if typeof character is 'undefined' or character is null
+    appendLeft = false if typeof appendLeft isnt 'boolean' or typeof appendLeft is 'undefined' or character is null
+    rtn = @
+    while rtn.length < length
+        if appendLeft
+            rtn =  character + rtn
+        else
+            rtn = rtn.concat character
+    rtn
+
+root.String::pad = (length , character) ->
+    @fill length,character,true
+    
+root.String::zeroFill = (length) ->
+    @fill length,"0",false
+    
 root.String::toCapitalCase = ->
     re = /\s/g
     words = @split(re)
